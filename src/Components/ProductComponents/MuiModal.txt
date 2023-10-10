@@ -1,0 +1,32 @@
+import React from 'react';
+import { Dialog, DialogTitle, DialogContent, Typography, Button } from '@mui/material';
+
+const ProductModal = ({ selectedProduct, showModal, onClose }) => {
+    console.log(showModal)
+    return (
+        <Dialog open={showModal} onClose={onClose}>
+            <DialogTitle>{selectedProduct && selectedProduct.product_name}</DialogTitle>
+            <DialogContent>
+                {selectedProduct && (
+                    <>
+                        <div className="container-fluid">
+                            <div className="row">
+                                <div className="col-lg-6 mt-2">
+                                    <img src={selectedProduct.image_url} className="img-fluid mb-3 rounded-5 " alt="Product" />
+                                </div>
+                                <div className="col-lg-6 mt-5">
+                                    <Typography><strong>Price: </strong> {selectedProduct.product_price_inr}</Typography>
+                                    <Typography><strong>Description: </strong>{selectedProduct.description}</Typography>
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )}
+            </DialogContent>
+            <Button onClick={onClose}>Close</Button>
+        </Dialog>
+    );
+};
+
+export default ProductModal;
+

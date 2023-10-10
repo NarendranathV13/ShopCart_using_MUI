@@ -1,0 +1,10 @@
+.custom-card {
+    height: 600px;
+  }
+  .short_description{
+    font-size: 12px;
+  }
+  .custom-cards {
+    border-radius: 20px !important;
+    padding: 10px !important;
+  }
