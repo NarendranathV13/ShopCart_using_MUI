@@ -6,13 +6,13 @@ import ProductNav from "../../Components/ProductComponents/ProductNav";
 import "../Products/style.css"
 // import Spinner from "../../Components/Spinner";
 import Customtoast from "../../Components/Customtoast.js";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductModal from "../../Components/ProductComponents/ProductModal";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CustomButton from "../../Components/CustomButton";
 import Loader from "../../Components/ProductComponents/Loader";
+import ProductModal1 from "../../Components/ProductComponents/ProductModal";
 
 const Products = () => {
     const dispatch = useDispatch();
@@ -67,6 +67,9 @@ const Products = () => {
     const handleToastClose = () => {
         setShowToast(false);
     };
+    const handleCloseModal = () => {
+        setShowModal(false);
+      };
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
         handleShowToast(true, 'warning', 'Product is added to cart');
@@ -155,8 +158,8 @@ const Products = () => {
                 ))}
             </div>
             {/* modal for product display */}
-            <ProductModal selectedProduct={selectedProduct}
-                showModal={showModal} />
+            <ProductModal1 selectedProduct={selectedProduct}
+                showModal={showModal} handleClose={handleCloseModal} />
             {showToast && (
                 <Customtoast
                     show={showToast}
