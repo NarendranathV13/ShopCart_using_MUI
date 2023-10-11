@@ -13,6 +13,7 @@ const Dashboard = () => { // Receive cartItems from Redux state
             setOrderCount(storedOrders.length);
         }
     }, []);
+
     return (
         <div className=" container">
             <div className=" row">

@@ -9,7 +9,7 @@ import React from 'react';
 
 const ProductModal1 = ({ selectedProduct,showModal, handleClose }) => {
     return (
-        <Dialog open={showModal} onClose={handleClose} maxWidth="md" fullWidth>
+        <Dialog data-testid="modal1" open={showModal} onClose={handleClose} maxWidth="md" fullWidth>
         <DialogTitle>{selectedProduct && selectedProduct.product_name}</DialogTitle>
         <DialogContent>
             {selectedProduct && (
@@ -24,10 +24,10 @@ const ProductModal1 = ({ selectedProduct,showModal, handleClose }) => {
                         </Grid>
                         <Grid item xs={6}>
                             <Typography variant="body1">
-                                <strong>Price:</strong> {selectedProduct.product_price_inr}
+                                Price: {selectedProduct.product_price_inr}
                             </Typography>
                             <Typography variant="body1">
-                                <strong>Description:</strong> {selectedProduct.description}
+                                Description: {selectedProduct.description}
                             </Typography>
                         </Grid>
                     </Grid>
