@@ -20,7 +20,7 @@ const TopBar = ({ cartCount, Username, handleLogout }) => {
 
         <NavLink  className=' mx-3' to="/Cart" style={{ textDecoration: 'none', color: 'inherit' }}>
           <IconButton color="inherit">
-            <Badge badgeContent={cartCount} color="success">
+            <Badge badgeContent={cartCount}  color="success">
               <i className="fa-solid fa-cart-shopping"></i>
             </Badge>
           </IconButton>

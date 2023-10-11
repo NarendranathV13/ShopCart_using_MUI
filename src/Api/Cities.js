@@ -4,6 +4,7 @@ const Cities = ({ apiLink }) => {
     const [states, setStates] = useState([]);
     useEffect(() => {
         axios.get(apiLink, {
+             //change the bearer token using demo2.js component
             headers: {
                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJuYXJlbmRyYW5hdGgudkBhcmtpbmZvdGVjLmNvbSIsImFwaV90b2tlbiI6Il82UWhrYnFTMXhpeF9Zd1k4U2x2YWl0dHFRZ3gxYVVUNWhrVTVlMjJENUp1ZW4yXzI5OHE0SU9vLXR0WVU5ZzhYY28ifSwiZXhwIjoxNjk1MTg0NzMxfQ.qaujp2YnHltA29xvGJcnP2YPxErKQbKTHVI1tKk0vvY",
                 "Accept": "application/json"

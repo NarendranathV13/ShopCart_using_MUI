@@ -1,4 +1,5 @@
 import './App.css';
+//use demo2 to get the bearer token
 // import Demo2 from './Components/demo2';
 import { BrowserRouter} from "react-router-dom";
 import { useState } from 'react';

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Demo2() {
+const Demo2 = () => {
   const [accessToken, setAccessToken] = useState(null);
 
   useEffect(() => {
@@ -26,6 +26,7 @@ function Demo2() {
   return (
     <div>
       <h1>Access Token</h1>
+      {/* use this token in the bearer of api */}
       <p>{accessToken}</p>
     </div>
   );

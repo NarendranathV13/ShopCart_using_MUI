@@ -104,7 +104,6 @@ const Products = () => {
                                 className="card-img-top rounded-5"
                                 alt="..."
                                 onClick={() => handleOpenModal(product)}
-                               
                             />
                             {/* MUI card component */}
                             <Card className=" custom-cards">
