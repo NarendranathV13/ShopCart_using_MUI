@@ -4,9 +4,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux';
 import ProductNav from "../../Components/ProductComponents/ProductNav";
 import "../Products/style.css"
-// import Spinner from "../../Components/Spinner";
 import Customtoast from "../../Components/Customtoast.js";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -67,9 +65,6 @@ const Products = () => {
     const handleToastClose = () => {
         setShowToast(false);
     };
-    const handleCloseModal = () => {
-        setShowModal(false);
-      };
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
         handleShowToast(true, 'warning', 'Product is added to cart');
@@ -78,6 +73,9 @@ const Products = () => {
         setSelectedProduct(product);
         setShowModal(true);
     };
+    const handleCloseModal = () => {
+        setShowModal(false);
+      };
     const handleBuyNow = (product) => {
         dispatch(addBuyNow(product));
         handleShowToast(true, 'success', 'Order placed successfully'); // Updated line
@@ -106,7 +104,7 @@ const Products = () => {
                                 className="card-img-top rounded-5"
                                 alt="..."
                                 onClick={() => handleOpenModal(product)}
-                                data-bs-toggle="modal" data-bs-target="#productModal"
+                               
                             />
                             {/* MUI card component */}
                             <Card className=" custom-cards">
@@ -158,8 +156,8 @@ const Products = () => {
                 ))}
             </div>
             {/* modal for product display */}
-            <ProductModal1 selectedProduct={selectedProduct}
-                showModal={showModal} handleClose={handleCloseModal} />
+            {showModal&&<ProductModal1 selectedProduct={selectedProduct} showModal={showModal}
+                 handleClose={handleCloseModal} />}
             {showToast && (
                 <Customtoast
                     show={showToast}
